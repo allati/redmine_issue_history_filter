@@ -1,0 +1,25 @@
+#issue_search_history select,
+#issue_search_history input[type='text'],
+#issue_search_history label {
+	display:block;
+	margin-bottom:6px;
+	font-size: 10px;
+	width: 100%;
+}
+
+#issue_search_history input[type='text'] {
+	width: 190px;
+}
+
+#issue_search_history {
+	width: 200px;
+}
+
+.issue_search_history_not_applied {
+	opacity: 0.3;
+}
+
+#issue_search_history_magnifier {
+	margin: 0 0 -2px 4px;
+	cursor: pointer;
+}
