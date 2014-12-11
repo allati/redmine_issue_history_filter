@@ -34,10 +34,26 @@ var redmineIssueHistoryPlugin = {
 		$(".journal").each(
 			function(i, e){
 				var el = $(e);
+				var forceHide = false;
+				var hasDetails = el.hasClass('has-details');
+				var hasNotes = el.hasClass('has-notes');
+				if (showDetails) {
+					if (showNotes) {
+						forceHide = false;
+					} else {
+						forceHide = ! hasDetails;
+					}
+				} else {
+					if (showNotes) {
+						forceHide = ! hasNotes;
+					} else {
+						forceHide = true;
+					}
+				}
 				var notText = match != "" && el.text().toLowerCase().indexOf(match) <= -1;
 				var notUser = user != "" && el.find("h4:first .user").text() != user;
 				var notAttr = attr != "" && el.find(".details strong").text() != attr;
-				if (notText || notUser || notAttr)
+				if (notText || notUser || notAttr || forceHide)
 					el.fadeOut();
 				else
 					el.fadeIn();
