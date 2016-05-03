@@ -62,7 +62,7 @@ var redmineIssueHistoryPlugin = {
 	},
 	
 	addMagnifier: function() {
-		$("div#history h3").append(
+		$("div#history h3:first").append(
 				"<img src='../images/magnifier.png' id='issue_search_history_magnifier' class='issue_search_history_not_applied'/>"
 		);
 		$("#issue_search_history_magnifier")
@@ -154,7 +154,7 @@ var redmineIssueHistoryPlugin = {
 						"</div>" +
 					"</form>" +
 				"</div>";
-			$("div#history h3").after(filterForm);
+			$("div#history h3:first").after(filterForm);
 			$("#issue_search_history")
 			.dialog({
 				autoOpen: false,
